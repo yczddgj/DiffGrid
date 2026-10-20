@@ -279,7 +279,7 @@ def get_slice_different_embedding(
     # 6. 对所有原始数据进行向量化双线性插值
     def bilinear_interpolate_vectorized(points, grid_coords_array, regularized_grid_coords, grid_size):
         """
-        向量化的双线性插值，大幅提升性能
+        向量化双线性插值
         """
         n_points = len(points)
         result = np.zeros_like(points)

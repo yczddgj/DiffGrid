@@ -124,7 +124,7 @@ let circleGroup: d3.Selection<SVGGElement, unknown, null, undefined>;
 let imageGroup: d3.Selection<SVGGElement, unknown, null, undefined>;
 let lassoGroup: d3.Selection<SVGGElement, unknown, null, undefined>;
 
-// 在 setup 部分添加 contourGroup 变量
+// 等高线图层
 let contourGroup: d3.Selection<SVGGElement, unknown, null, undefined>;
 
 // 比例尺
@@ -566,7 +566,7 @@ const drawScatter = () => {
     circles.exit().remove();
   }
 
-  // 添加图层分组：在 imageGroup 中创建三层（连线层、图片层、标题层）
+  // 连线、图片和标题图层
   const lineGroup: d3.Selection<SVGGElement, unknown, null, undefined> =
     imageGroup.select<SVGGElement>('.line-layer').empty()
       ? imageGroup.append('g').attr('class', 'line-layer')
@@ -728,7 +728,7 @@ const drawScatter = () => {
       borders.raise();
       images.raise();
     } else {
-      // ===== 新增 tabular / text 模式：不显示图片，只显示截断关键词（保留连线） =====
+      // Tabular / Text 模式：显示关键词与连线
       if (mode.value === 'tabular' || mode.value === 'text') {
         const dataItems = filteredScatterData.value.filter((d: ScatterData) => d.key_word || d.title);
 
@@ -1371,7 +1371,7 @@ watch(() => props.scatterEncoding, () => {
 });
 
 
-// 监听缩放和平移 - 添加标记避免循环
+// 监听缩放和平移，避免重复触发
 let isInternalTransform = false;
 
 watch(() => props.zoom, (newZoom) => {

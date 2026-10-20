@@ -48,7 +48,7 @@ def draw_two_scatter_plots(
     ax2.set_ylim(0, 1)
     ax2.margins(0, 0)
 
-    plt.tight_layout()  # 添加自动布局调整
+    plt.tight_layout()
     plt.savefig(output_path, dpi=300)
     plt.close()
 
@@ -69,7 +69,7 @@ def draw_joint_reduction_scatter(
     plt.xlim(0, 1)
     plt.ylim(0, 1)
     plt.margins(0, 0)
-    plt.tight_layout()  # 添加自动布局调整
+    plt.tight_layout()
     plt.savefig(output_path, dpi=300)
     plt.close()
 
@@ -94,7 +94,7 @@ def draw_overlay_contours(
     slice1_name: str,
     slice2_name: str,
     output_path: str = 'contour_overlay.png',
-    # 下面是新增的可调参数
+    # 可调参数
     grid_size: int = 100,
     zero_white_ratio: float = 0.01,   # 小于 max(z)*该比例的密度直接变白
     red_alpha: int = 128,             # 叠加第二幅图时的不透明度(0-255)

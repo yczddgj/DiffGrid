@@ -130,7 +130,7 @@ class ViewManager:
             "y_min": 0, "y_max": 1
         }
 
-        # 智能采样状态跟踪
+        # 视口采样状态
         self._previous_viewport_bounds: Dict[str, float] = {
             "x_min": 0, "x_max": 1,
             "y_min": 0, "y_max": 1
@@ -298,7 +298,7 @@ class ViewManager:
         """重载所有数据"""
         print('reloading')
         self._get_thumb_indices_in_view()
-        # 重置智能采样状态
+        # 重置视口采样状态
         self._current_sampled_indices = []
         self._reference_sampled_indices = []
 
@@ -451,7 +451,7 @@ class ViewManager:
                                      current_indices: List[int],
                                      slice_type: str) -> tuple[List[int], Dict[int, tuple]]:
         """
-        智能采样算法 - 尽量保持视窗内已有点不变
+        视口采样：保留重叠区域内的采样点
 
         Args:
             embedding: 嵌入坐标
@@ -594,7 +594,7 @@ class ViewManager:
 
         # 确保embedding是numpy数组
         step_start = time.perf_counter()
-        embedding = np.array(embedding)  # 添加这行转换
+        embedding = np.array(embedding)
         step_end = time.perf_counter()
         print(f"步骤2-转换嵌入坐标: {(step_end - step_start)*1000:.2f}ms")
 
@@ -1184,7 +1184,7 @@ class ViewManager:
             return self.heatmap_calculator.get_density_difference_heatmap(
                 self._current_slice_embedding,
                 self._reference_slice_embedding,
-                viewport,  # 添加视口参数
+                viewport,
                 method=method,
                 sigma=sigma
             )

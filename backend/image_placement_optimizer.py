@@ -193,7 +193,7 @@ class ImagePlacementOptimizer:
                                image_positions: List[Tuple[float, float]],
                                candidate_positions: np.ndarray,
                                viewport: Dict[str, float],
-                               image_size_ratio: float) -> List[List[int]]:  # 添加image_size_ratio参数
+                               image_size_ratio: float) -> List[List[int]]:
         """为每张图片筛选距离原位置合适的候选位置"""
         viewport_width = viewport['x_max'] - viewport['x_min']
         viewport_height = viewport['y_max'] - viewport['y_min']

@@ -599,7 +599,7 @@ const onViewportChange = async (bounds: { x1: number, x2: number, y1: number, y2
     // 顺序执行：先更新配置，再依次加载数据
     await api.updateView(props.view.id, updateData);
     await loadScatterData();
-    await loadHeatmapData();  // 添加热力图加载
+    await loadHeatmapData();
     await loadViewInfo();
   } catch (error) {
     console.error('视口变化处理失败:', error);

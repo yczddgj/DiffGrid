@@ -1,8 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib import font_manager  # 添加字体管理模块
-import os  # 添加os模块用于检查字体文件
+from matplotlib import font_manager
+import os
 
 # 设置Roboto字体
 font_path = '/usr/share/fonts/truetype/roboto/Roboto-Regular.ttf'  # 常见Linux路径
@@ -56,5 +56,5 @@ plt.legend()
 plt.tight_layout()
 # 保存为PNG和SVG两种格式
 plt.savefig('lsdd_efficiency_plot.png', dpi=300)
-plt.savefig('lsdd_efficiency_plot.svg')  # 新增SVG导出
+plt.savefig('lsdd_efficiency_plot.svg')
 plt.show()

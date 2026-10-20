@@ -15,3 +15,5 @@ Related work:
 
 - Hennes Rave, Vladimir Molchanov, and Lars Linsen. *De-cluttering Scatterplots with Integral Images*. IEEE Transactions on Visualization and Computer Graphics, 2024. [DOI](https://doi.org/10.1109/TVCG.2024.3381453).
 - Chengcheng Guo, Bo Zhao, and Yanbing Bai. *DeepCore: A Comprehensive Library for Coreset Selection in Deep Learning*. [Paper](https://arxiv.org/abs/2204.08499), [code](https://github.com/PatrickZH/DeepCore).
+
+The system figure in `docs/images/overview.png` is copied from the authors' [DiffGrid publication page](https://shixialiu.com/#paper_diffgrid) ([original image](https://shixialiu.com/publications/diffgrid/thumbnail.jpg)). The root MIT license applies to code, not to this paper figure.

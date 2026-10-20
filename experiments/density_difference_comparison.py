@@ -1,16 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""
-Density Difference Visualization Script (Corrected)
-=================================================
-This script plots side-by-side:
-1. Density difference estimated by LSDD (Least-Squares Density Difference)
-2. Density difference obtained by subtracting two KDE estimations
-
-Corrections:
-- **LSDD Kernel:** Unified the kernel bandwidths (sigma) for H, h_hat, and K matrices to resolve potential theoretical inconsistency and improve LSDD detail.
-- **Square Grid:** Ensured the computation boundary uses the maximum data span to enforce a square grid, matching the aspect='equal' setting in plotting.
-"""
+"""Plot LSDD and KDE density differences for two subsets of a 2D embedding."""
 import os
 import sys
 import argparse
@@ -19,7 +9,7 @@ import matplotlib.pyplot as plt
 from sklearn.neighbors import KernelDensity
 from typing import Optional
 
-# Make backend heatmap calculator importable to reuse the exact LSDD implementation
+# Use the backend density estimator.
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _BACKEND_DIR = os.path.abspath(os.path.join(_HERE, '..', 'backend'))
 if _BACKEND_DIR not in sys.path:
@@ -27,7 +17,7 @@ if _BACKEND_DIR not in sys.path:
 try:
     from heatmap_calculator import HeatmapCalculator  # type: ignore
 except Exception as e:
-    HeatmapCalculator = None  # will error later when used
+    HeatmapCalculator = None
 
 
 def load_indices(path: str, n_total: int, offset: int = 0) -> np.ndarray:
@@ -292,7 +282,7 @@ def compute_lsdd(sub1: np.ndarray, sub2: np.ndarray, grid_res: int, sigma: float
 def compute_kde_difference(sub1: np.ndarray, sub2: np.ndarray, grid_res: int, bandwidth: float | None):
 
     all_pts = np.vstack([sub1, sub2])
-    # 修正1: 强制边界为正方形
+    # 使用正方形边界
     bounds = get_square_bounds(all_pts)
 
     xv, yv, centers = make_grid(bounds, grid_res)

@@ -15,7 +15,7 @@ class HeatmapCalculator:
                  lsdd_sigma: float = 0.01,
                  lsdd_lambda: float = 0.012,
                  grid_resolution: int = config.GRID_RESOLUTION,
-                 lsdd_max_value: float = 30.0):  # 新增LSDD最大值参数
+                 lsdd_max_value: float = 30.0):
         """
         初始化热力图计算器
 
@@ -42,7 +42,7 @@ class HeatmapCalculator:
         np.random.seed(42)
 
     def get_class_heatmap(self, embedding: np.ndarray, labels: np.ndarray,
-                          viewport: Dict[str, float],  # 改为字典形式
+                          viewport: Dict[str, float],
                           normalize: bool = False) -> List[Dict[str, Any]]:
         """
         生成类别热力图，每个网格显示该区域的主要类别
@@ -60,7 +60,7 @@ class HeatmapCalculator:
         return self._get_heatmap(embedding, labels, viewport, heatmap_type='class', normalize=normalize)
 
     def get_density_difference_heatmap(self, embedding1: np.ndarray, embedding2: np.ndarray,
-                                       viewport: Dict[str, float],  # 改为字典形式
+                                       viewport: Dict[str, float],
                                        method: str = 'lsdd',
                                        sigma: float = None) -> List[Dict[str, Any]]:
         """
@@ -112,7 +112,7 @@ class HeatmapCalculator:
         return self._get_heatmap(embedding, weights, heatmap_type='weighted', normalize=normalize)
 
     def _get_heatmap(self, embedding: np.ndarray, weights: np.ndarray,
-                     viewport: Dict[str, float],  # 保持列表形式（内部使用）
+                     viewport: Dict[str, float],
                      heatmap_type: str = '', normalize: bool = False) -> List[Dict[str, Any]]:
         """
         通用热力图生成函数
@@ -465,7 +465,7 @@ class HeatmapCalculator:
         return embedding1, embedding2
 
     def _get_lsdd_diff_func(self, embedding1: np.ndarray, embedding2: np.ndarray,
-                            viewport: Dict[str, float],  # 新增视口参数
+                            viewport: Dict[str, float],
                             sigma: float = None,
                             ours: bool = True,
                             sample: bool = False):   # 可选的动态sigma
@@ -760,7 +760,7 @@ class HeatmapCalculator:
                                              embedding1: np.ndarray,
                                              embedding2: np.ndarray,
                                              viewport: Dict[str, float],
-                                             sigma: float = None) -> List[Dict[str, Any]]:  # 保持列表形式（内部使用）
+                                             sigma: float = None) -> List[Dict[str, Any]]:
         """
         生成 mixed 复合热力图，返回细分四小格的列表，每个格子坐标和value与原heatmap格式一致。
         """
@@ -917,7 +917,7 @@ class HeatmapCalculator:
                                              embedding2: np.ndarray,
                                              viewport: Dict[str, float],
                                              method: str = 'kde',
-                                             sigma: float = None) -> List[Dict[str, Any]]:  # 保持列表形式（内部使用）
+                                             sigma: float = None) -> List[Dict[str, Any]]:
         """
         生成 mixed 复合热力图，返回细分四小格的列表，每个格子坐标和value与原heatmap格式一致。
         """
