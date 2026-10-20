@@ -1,0 +1,43 @@
+# Local data, extracted features, model weights, and generated results
+/database/
+/backend/models/
+/backend/temp*/
+/backend/log*/
+/backend/results/
+/backend/baseline_plots/
+/backend/coverage*.json
+/backend/lsdd_efficiency_results.csv
+/backend/lsdd_efficiency_plot.*
+/outputs/
+
+# Environments, caches, builds, and local configuration
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.cache/
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+*.tsbuildinfo
+*.log
+.DS_Store
+.idea/
+.vscode/
+
+# Large or private artifacts are prepared locally
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.npy
+*.npz
+*.pkl
+*.joblib
+*.zip
+*.tar
+*.tar.gz

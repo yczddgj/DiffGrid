@@ -1,0 +1,5 @@
+-r requirements.txt
+pandas==2.2.3
+prefetch-generator==1.0.3
+requests==2.32.3
+pycocotools==2.0.10

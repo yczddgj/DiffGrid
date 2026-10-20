@@ -1,0 +1,4 @@
+-r requirements.txt
+# Optional image feature extraction; weights are downloaded on first use.
+dreamsim==0.2.1
+openai-clip==1.0.1

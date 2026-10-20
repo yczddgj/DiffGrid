@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use DiffGrid, please cite the paper below."
+type: software
+title: DiffGrid
+repository-code: "https://github.com/yczddgj/DiffGrid"
+license: MIT
+authors:
+  - family-names: Guo
+    given-names: Xinyuan
+  - family-names: Zhu
+    given-names: Xu
+  - family-names: Ye
+    given-names: Yilin
+  - family-names: Liu
+    given-names: Shixia
+preferred-citation:
+  type: conference-paper
+  authors:
+    - family-names: Guo
+      given-names: Xinyuan
+    - family-names: Zhu
+      given-names: Xu
+    - family-names: Ye
+      given-names: Yilin
+    - family-names: Liu
+      given-names: Shixia
+  title: "Revealing the Gap: Visual Comparison of Large-Scale Datasets via Multi-Scale Density Difference Map"
+  collection-title: "Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems"
+  year: 2026
+  month: 4
+  doi: "10.1145/3772318.3791171"
+  url: "https://doi.org/10.1145/3772318.3791171"
+  start: 1
+  end: 20

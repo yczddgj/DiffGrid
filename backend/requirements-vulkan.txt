@@ -1,0 +1,2 @@
+# Python bindings only. A Vulkan 1.3 loader and compatible driver are also required.
+vulkan==1.3.275.1
