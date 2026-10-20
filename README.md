@@ -6,8 +6,6 @@ Xinyuan Guo, Xu Zhu, Yilin Ye, Shixia Liu · **CHI 2026** · [中文](README.zh-
 
 ![DiffGrid system interface](docs/images/overview.png)
 
-System figure from the [authors' publication page](https://shixialiu.com/#paper_diffgrid).
-
 ## Setup
 
 Python 3.10/3.11, Node.js 22, and Vulkan 1.3 with a compatible driver. Tested on Linux.
@@ -63,4 +61,4 @@ Original datasets and model weights are not included. See [data preparation](doc
 
 ## License
 
-[MIT](LICENSE). Third-party code and figure attribution: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+[MIT](LICENSE). [Third-party licenses](THIRD_PARTY_NOTICES.md).

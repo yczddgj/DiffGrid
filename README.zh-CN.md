@@ -6,8 +6,6 @@ Xinyuan Guo、Xu Zhu、Yilin Ye、Shixia Liu · **CHI 2026** · [English](README
 
 ![DiffGrid 系统界面](docs/images/overview.png)
 
-论文系统图，来自[作者的论文主页](https://shixialiu.com/#paper_diffgrid)。
-
 ## 安装
 
 需要 Python 3.10/3.11、Node.js 22，以及 Vulkan 1.3 和兼容驱动。已在 Linux 上测试。
@@ -48,4 +46,4 @@ npm run dev
 
 仓库不包含原始数据和模型权重。数据接入见[数据说明](docs/DATA.md)，实验脚本和配置见[实验说明](docs/EXPERIMENTS.md)。默认数据目录为 `database/`，可用 `DIFFGRID_DATA_DIR` 修改。
 
-引用格式见[英文 README](README.md#citation)或 [CITATION.cff](CITATION.cff)。代码采用 [MIT 许可证](LICENSE)，第三方代码及图片出处见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+引用格式见[英文 README](README.md#citation)或 [CITATION.cff](CITATION.cff)。代码采用 [MIT 许可证](LICENSE)。[第三方许可](THIRD_PARTY_NOTICES.md)。
